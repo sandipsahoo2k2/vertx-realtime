@@ -30,7 +30,6 @@ router.route("/eventbus/*").handler(SockJSHandler.create(vertx).bridge(options, 
   // It can also be used for fine grained access control.
 
   if (event.type() == "SOCKET_CREATED" || event.type() == "SOCKET_CLOSED") {
-    console.log("event " + event.type() );
     var socket = event.socket();
     console.log("id: " + socket.writeHandlerID())
   }
